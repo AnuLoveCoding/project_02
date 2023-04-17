@@ -23,7 +23,7 @@ class MyWidget extends StatelessWidget {
         padding: EdgeInsets.all(20.0),
         child: Column(
           children: [
-            Text('MyApp'.toUpperCase(),style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20.0),),
+            Text('Registration Form'.toUpperCase(),style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20.0),),
             SizedBox(height: 20.0,),
             TextField(
               controller: name,
@@ -60,6 +60,8 @@ class MyWidget extends StatelessWidget {
           TextField(
             controller: phone,
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
@@ -111,7 +113,7 @@ class MyWidget extends StatelessWidget {
           SizedBox(height: 20.0,),
 
           ElevatedButton(onPressed: (){
-            print('${name.text}\n${address.text}\n ${e_mail.text}\n ${phone.text}');
+            print('${name.text}\n${address.text}\n${e_mail.text}\n${phone.text}');
             }, child: Text('Click me!!!'),),
           ],
         ),
