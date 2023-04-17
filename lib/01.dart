@@ -1,79 +1,65 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class MyWidget extends StatelessWidget {
-  MyWidget({super.key});
+   MyWidget({Key? key}) : super(key: key);
 
-  var name = TextEditingController();
-  var address = TextEditingController();
+   var name = TextEditingController();
+   var address= TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.orangeAccent,
       appBar: AppBar(
-        title: Text('Dashboard'),
+        title: Text('DashBoard'.toUpperCase()),
         centerTitle: true,
-      ),
+        ),
       body: Container(
-        margin: EdgeInsets.all(30),
-        padding: EdgeInsets.all(30),
+        color: Colors.orange,
         alignment: Alignment.center,
-        width: 200.0,
-        height: 200.0,
-        color: Colors.orangeAccent,
+        margin: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.0),
         child: Column(
           children: [
-            Text(
-              'my-collge',
-              style: TextStyle(
-                  color: Colors.amber[600], fontWeight: FontWeight.bold),
-            ),
+            Text('MyApp'.toUpperCase(),style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20.0),),
+            SizedBox(height: 20.0,),
             TextField(
               controller: name,
               decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
+                icon: Icon(Icons.person,color: Colors.limeAccent,shadows: [BoxShadow(offset: Offset(1,2))],),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
                 hintText: 'Enter Your name',
               ),
             ),
-
-            SizedBox(height: 10,),
-
+            SizedBox(height: 20.0,),
             TextField(
               controller: address,
               decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                hintText: 'Enter Your address',
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
-                hintText: 'Enter Your address',
+                icon: Icon(Icons.map,color: Colors.lime,shadows: [BoxShadow(offset: Offset(1,2))],),
               ),
             ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            ElevatedButton(
-              onPressed: () {
-                print('${name.text}\n${address.text}');
-              },
-              child: Text('Click on me',style: TextStyle(color: Colors.blueGrey),),
-            ),
+          SizedBox(height: 20.0,),
+          ElevatedButton(onPressed: (){
+            print('${name.text}\n${address.text}');
+            }, child: Text('Click me!!!'),),
           ],
-
         ),
-
       ),
-
     );
   }
 }
